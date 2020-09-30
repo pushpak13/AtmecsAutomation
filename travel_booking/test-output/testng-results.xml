@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-09-29T22:35:52 IST" name="Suite" finished-at="2020-09-29T22:36:53 IST" duration-ms="60047">
+    <groups>
+    </groups>
+    <test started-at="2020-09-29T22:35:52 IST" name="Test" finished-at="2020-09-29T22:36:53 IST" duration-ms="60047">
+      <class name="com.atmecs.travel_booking.BookingTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.atmecs.travel_booking.BookingTest@78e117e3]" started-at="2020-09-29T22:36:25 IST" name="setUp" finished-at="2020-09-29T22:36:31 IST" duration-ms="6828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="bookingTest()[pri:0, instance:com.atmecs.travel_booking.BookingTest@78e117e3]" started-at="2020-09-29T22:36:31 IST" name="bookingTest" finished-at="2020-09-29T22:36:52 IST" duration-ms="20228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookingTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.atmecs.travel_booking.BookingTest@78e117e3]" started-at="2020-09-29T22:36:52 IST" name="tearDown" finished-at="2020-09-29T22:36:53 IST" duration-ms="829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.atmecs.travel_booking.BookingTest -->
+      <class name="com.atmecs.travel_booking.SignUpTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.atmecs.travel_booking.SignUpTest@1534f01b]" started-at="2020-09-29T22:35:52 IST" name="setUp" finished-at="2020-09-29T22:36:03 IST" duration-ms="10085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="signUpTest()[pri:0, instance:com.atmecs.travel_booking.SignUpTest@1534f01b]" started-at="2020-09-29T22:36:03 IST" name="signUpTest" finished-at="2020-09-29T22:36:23 IST" duration-ms="20645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.atmecs.travel_booking.SignUpTest@1534f01b]" started-at="2020-09-29T22:36:23 IST" name="tearDown" finished-at="2020-09-29T22:36:25 IST" duration-ms="1379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.atmecs.travel_booking.SignUpTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

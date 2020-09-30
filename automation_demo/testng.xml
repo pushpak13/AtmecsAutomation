@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<test name="Test">
+<classes>
+<class name="com.atmecs.automation_demo.RegisterTest"/>
+<class name="com.atmecs.automation_demo.FaceBookTest"/>
+<class name="com.atmecs.automation_demo.TwitterTest"/>
+<class name="com.atmecs.automation_demo.LinkedInTest"/>
+<class name="com.atmecs.automation_demo.GooglePlusTest"/>
+<class name="com.atmecs.automation_demo.YouTubeTest"/>
+</classes>
+</test>
+</suite>
