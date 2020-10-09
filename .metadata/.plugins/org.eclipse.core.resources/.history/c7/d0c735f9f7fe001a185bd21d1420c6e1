@@ -1,0 +1,22 @@
+package com.atmecs.demo_blaze;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class LogIn extends DemoBlazeBaseClass {
+	
+
+	@Test 
+	public void logIn() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		driver.findElement(By.linkText("Log in")).click();
+		driver.findElement(By.cssSelector("#loginusername")).sendKeys("pushpak");
+		driver.findElement(By.cssSelector("#loginpassword")).sendKeys("demo@1234");
+		driver.findElement(By.xpath("//button[contains(text(),'Log in')]")).click();
+		
+	}
+	
+	
+
+}

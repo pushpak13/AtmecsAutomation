@@ -1,0 +1,11 @@
+package com.atmecs.travel_booking.utils;
+
+public class ExcelReader {
+	
+	public static XSSFSheet ExcelSheet;
+	public static XSSFWorkBook ExcelWorkBook;
+	public static XSSFRow Row;
+	public static XSSFCell Cell;
+	
+
+}

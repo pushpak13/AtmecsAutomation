@@ -1,0 +1,5 @@
+package com.atmecs.php_travels.dataProvider;
+
+public class ConfigFileReader {
+
+}

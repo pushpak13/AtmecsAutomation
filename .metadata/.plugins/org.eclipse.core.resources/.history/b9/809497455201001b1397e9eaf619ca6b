@@ -1,0 +1,35 @@
+package com.atmecs.travel_booking.utils;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.atmecs.travel_booking.constants.Constants;
+
+public class ExcelReader {
+	
+	public static XSSFSheet ExcelSheet;
+	public static XSSFWorkbook ExcelWorkBook;
+	public static XSSFRow Row;
+	public static XSSFCell Cell;
+	
+	public static void setExcelFile() throws Exception
+	{
+		try {
+			FileInputStream ExcelFile = new FileInputStream(Constants.ExcelData_File);
+			ExcelWorkBook  = new XSSFWorkbook(ExcelFile);
+			ExcelSheet = ExcelWorkBook.getSheetAt(0);
+		} catch(Exception e) {
+			throw(e);
+			
+		}
+		
+	}
+	
+	
+	
+
+}

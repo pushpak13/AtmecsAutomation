@@ -1,0 +1,32 @@
+package com.atmecs.demo_blaze.helper;
+
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+
+public class HelperClass {
+	
+	public static WebDriver driver;
+	public static Properties locator,data;
+	
+	public HelperClass(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	
+	public void byLinkText(String value)
+	{
+		driver.findElement(By.linkText(value)).click();
+	}
+	public void enterValueInTextBox (String cssSelector,String value)
+	{
+		driver.findElement(By.cssSelector(cssSelector)).sendKeys(value);
+	}
+	public void clickOnButton (String xpath)
+	{
+		driver.findElement(By.xpath(xpath)).click();
+		
+	}
+	
+}

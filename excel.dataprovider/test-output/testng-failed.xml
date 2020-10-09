@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.atmecs.excel.dataprovider.ChatExcelTest">
+      <class name="com.atmecs.excel.dataprovider.PhpChatExcelTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="chatData" invocation-numbers="0"/>
+          <include name="chatData"/>
         </methods>
-      </class> <!-- com.atmecs.excel.dataprovider.ChatExcelTest -->
+      </class> <!-- com.atmecs.excel.dataprovider.PhpChatExcelTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

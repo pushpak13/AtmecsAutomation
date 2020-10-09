@@ -1,0 +1,87 @@
+package Calculation;
+
+import java.util.Scanner;
+
+class Addition
+       {
+    	  
+    		   
+	       public void add(int a, int b)
+	   {
+	    	   Scanner p=new Scanner(System.in);
+	    	   System.out.println("Enter first number");
+	    	   a=p.nextInt();
+	    	   System.out.println("Enter second number");
+	    	   b=p.nextInt();
+    	   
+    	System.out.println("Addition is" + (a+b));	   
+		}
+    	   
+       }
+       class Subtraction extends Addition
+       {
+    	   public void sub(int a, int b)
+    	   {
+    	System.out.println("Subtraction is" + (a-b));	   
+    	   }
+       }
+       class Multiplication extends Subtraction
+       {
+    	   public void mul(int a, int b)
+    	   {
+    	System.out.println("Multiplication is" + (a*b));	   
+    	   }
+       }
+       class Division extends Multiplication
+       {
+    	   public void div(int a, int b)
+    	   {
+    	System.out.println("Division is" + (a/b));	   
+    	   }
+
+		public void mul() {
+		
+			
+		}
+
+		public void div() {
+			
+			
+		}
+
+		public void add() {
+			
+			
+		}
+
+		public void sub() {
+			
+			
+		}
+
+		
+			
+		}
+       
+       
+		 class calculator {
+
+	  public static void main(String args[])  {
+		  Division d= new Division();
+		  d.add();
+		  d.sub();
+		  d.mul();
+		  d.div();
+		  
+		 
+		  
+		  
+		  
+	  }
+		 }
+		 
+		  
+		
+		
+
+	

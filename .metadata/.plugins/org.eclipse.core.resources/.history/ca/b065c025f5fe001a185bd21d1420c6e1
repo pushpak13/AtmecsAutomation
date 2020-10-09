@@ -1,0 +1,45 @@
+package com.atmecs.travel_booking;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.atmecs.travel_booking.base.BaseClass;
+
+public class Booking extends BaseClass {
+	
+	@Test 
+	public void booking() throws InterruptedException {
+		WebElement from = driver.findElement(By.id(locator.getProperty("FromID")));
+		from.click();
+		from.sendKeys(data.getProperty("From"));
+		Thread.sleep(2000);
+		from.sendKeys(Keys.ARROW_DOWN);
+		from.sendKeys(Keys.ENTER);
+		WebElement dest = driver.findElement(By.id(locator.getProperty("DestID")));
+		dest.click();
+		dest.sendKeys(data.getProperty("Destination"));
+		Thread.sleep(2000);
+		dest.sendKeys(Keys.ARROW_DOWN);
+		dest.sendKeys(Keys.ENTER);
+		driver.findElement(By.id(locator.getProperty("DepartureID"))).click();
+		driver.findElement(By.id(data.getProperty("DepartureDate"))).click();
+		driver.findElement(By.id(locator.getProperty("ReturnID"))).click();
+		driver.findElement(By.id(data.getProperty("ReturnDate"))).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id(locator.getProperty("TravelDetail"))).click();
+		Thread.sleep(2000);
+		for(int i=0;i<3;i++)
+		{
+			driver.findElement(By.id(locator.getProperty("Passengers"))).click();
+		}
+		Thread.sleep(2000);
+		driver.findElement(By.id(locator.getProperty("SearchButton"))).click();
+		Thread.sleep(9000);
+		driver.close();
+	}
+	
+
+
+}

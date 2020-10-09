@@ -1,0 +1,31 @@
+package com.atmecs.php_travels.utility;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import com.atmecs.php_travels.constants.Constants;
+
+public class PropertyReader {
+	Static File file;
+	static FileInputStream fs;
+	
+	public static String readData(String path) {
+		
+
+		file = new java.io.File(path);
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found in the given path");
+		}
+
+		
+	}
+
+	public static Properties readProperties(String locatorFile) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	}

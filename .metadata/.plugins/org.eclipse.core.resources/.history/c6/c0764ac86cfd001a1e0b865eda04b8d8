@@ -1,0 +1,15 @@
+package com.atmecs.php_travels_chat;
+
+public class Constants {
+
+	public static final String Base_Url = "https://phptravels.com/";
+	public static final String Driver_Path = "\\lib\\chromedriver.exe";
+	public static final String Locator_File = "\\src\\main\\resources\\locators\\\\locators.properties";
+	public static final String Testdata_File = "\\src\\main\\resources\\testdata\\testdata.properties";
+
+
+}
+
+
+
+

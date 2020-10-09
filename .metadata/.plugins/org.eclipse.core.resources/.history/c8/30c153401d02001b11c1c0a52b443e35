@@ -1,0 +1,25 @@
+package com.atmecs.demo_blaze.pages;
+
+import java.util.concurrent.TimeUnit;
+import org.testng.annotations.Test;
+import com.atmecs.demo_blaze.base.BaseClass;
+import com.atmecs.demo_blaze.helper.HelperClass;
+
+
+public class LogInPage extends BaseClass {
+	
+
+	@Test 
+	public void logIn() throws InterruptedException {
+		
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		HelperClass.byText(locator.getProperty("LogIn"));
+		HelperClass.enterValueInTextBox(locator.getProperty("LoginUsername"),data.getProperty("username"));
+		HelperClass.enterValueInTextBox(locator.getProperty("LoginPassword"),data.getProperty("password"));
+		HelperClass.clickOnButton(locator.getProperty("LogInButton"));
+		
+	}
+	
+	
+
+}

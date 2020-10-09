@@ -1,0 +1,19 @@
+FirstName=//input[@placeholder='First Name']
+LastName=//input[@placeholder='Last Name']
+AddressBox=//form[@id='basicBootstrapForm']/div[2]/div/textarea
+EmailAddress=//input[@type='email']
+Phone=//input[@type='tel']
+Gender=//input[@value='Male']
+Hobby1=checkbox1
+Hobby2=checkbox2
+LangID=msdd
+Language="//multi-select/div[2]/ul/li[8]"
+Skill=Skills
+Country=countries
+SelectCountry=//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span
+Year=yearbox
+Month=//*[@ng-model='monthbox']
+Day=daybox
+Pass=firstpassword
+ConPass=secondpassword
+SubmitBtn=//button[@id='submitbtn']

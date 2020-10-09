@@ -2,7 +2,6 @@ package com.atmecs.demo_blaze.pages;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import com.atmecs.demo_blaze.base.BaseClass;
@@ -28,6 +27,7 @@ public class ValidateCartPage extends BaseClass {
 		HelperClass elementHelper = new HelperClass(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		elementHelper.clickElement(locator.getProperty("CartLinkText"));
+		
 	}
 
 }

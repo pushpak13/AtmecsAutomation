@@ -1,0 +1,80 @@
+package com.atmecs.automation_demo;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.support.ui.Select;
+
+
+
+
+import org.testng.annotations.Test;
+
+public class Register extends AutomationDemoBaseClass{
+	
+	@Test   
+	public void register() throws InterruptedException {
+		driver.findElement(By.xpath(obj.getProperty("FirstName"))).sendKeys(obj1.getProperty("firstname"));
+		driver.findElement(By.xpath(obj.getProperty("LastName"))).sendKeys(obj1.getProperty("lastname"));
+		driver.findElement(By.xpath(obj.getProperty("AddressBox"))).sendKeys(obj1.getProperty("Address"));
+		driver.findElement(By.xpath(obj.getProperty("EmailAddress"))).sendKeys(obj1.getProperty("Email"));
+		driver.findElement(By.xpath(obj.getProperty("Phone"))).sendKeys(obj1.getProperty("PhoneNo"));
+		driver.findElement(By.xpath(obj.getProperty("Gender"))).click();
+		driver.findElement(By.id(obj.getProperty("Hobby1"))).click();
+		driver.findElement(By.id(obj.getProperty("Hobby2"))).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id(obj.getProperty("LangID"))).click();
+		driver.findElement(By.xpath(obj.getProperty("Language"))).click();
+		Select skills = new Select(driver.findElement(By.id(obj.getProperty("Skill"))));
+		skills.selectByValue(obj1.getProperty("SkillName"));
+		Thread.sleep(2000);
+		Select country = new Select(driver.findElement(By.id(obj.getProperty("Country"))));
+		country.selectByValue(obj1.getProperty("CountryName"));
+		Thread.sleep(2000);
+		WebElement sel = driver.findElement(By.xpath(obj.getProperty("SelectCountry")));
+		sel.click();
+		for(int i=0;i<5;i++)
+		{
+			sel.sendKeys(Keys.ARROW_DOWN);
+		}
+		sel.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement year = driver.findElement(By.id(obj.getProperty("Year")));
+		year.click();
+		for(int i=0;i<30;i++)
+		{
+			year.sendKeys(Keys.ARROW_DOWN);
+		}
+		year.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement month = driver.findElement(By.xpath(obj.getProperty("Month")));
+		month.click();
+		for(int i=0;i<3;i++)
+		{
+			month.sendKeys(Keys.ARROW_DOWN);
+		}
+		month.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement day = driver.findElement(By.id(obj.getProperty("Day")));
+		day.click();
+		for(int i=0;i<10;i++)
+		{
+			day.sendKeys(Keys.ARROW_DOWN);
+		}
+		day.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		driver.findElement(By.id(obj.getProperty("Pass"))).sendKeys(obj1.getProperty("Passwd"));
+		driver.findElement(By.id(obj.getProperty("ConPass"))).sendKeys(obj1.getProperty("ConPasswd"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(obj.getProperty("SubmitBtn"))).click();
+		Thread.sleep(9000);
+
+	}
+
+}
+
+

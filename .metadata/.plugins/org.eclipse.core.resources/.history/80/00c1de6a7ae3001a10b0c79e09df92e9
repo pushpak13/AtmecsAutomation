@@ -1,0 +1,65 @@
+package Calculation;
+
+import java.util.Scanner;
+
+class A{                                                                  
+int a,b;
+void calculate()
+{
+Scanner p=new Scanner(System.in);
+System.out.println("Enter first number");
+a=p.nextInt();
+System.out.println("Enter second number");
+b=p.nextInt();
+int s;
+s=a+b;
+System.out.println("Sum is"+s);
+}
+}
+class M extends A{                                                     
+void calculate(){
+int k;
+k=a*b;
+System.out.println("Multiplication is"+k);
+}
+}
+class S extends M{                                                       
+void calculate()
+{
+int d;
+d=a-b;
+System.out.println("Subtraction is"+d);
+}
+}
+ class D extends S{                                                        
+	 
+void calculate()
+{
+int e;
+e=a/b;
+System.out.println("Division is"+e);
+}
+}
+
+class calculator1 {
+
+	public static void main(String[] args)  {
+		D p=new D();
+		p.calculate();
+		
+		
+		
+		
+
+	}
+
+}
+
+
+
+
+
+
+
+
+

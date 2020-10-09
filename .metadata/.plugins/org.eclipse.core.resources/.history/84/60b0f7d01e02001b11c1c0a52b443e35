@@ -1,0 +1,25 @@
+package com.atmecs.demo_blaze.pages;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+import com.atmecs.demo_blaze.base.BaseClass;
+import com.atmecs.demo_blaze.helper.HelperClass;
+
+
+public class AddToCartPage extends BaseClass{
+	
+	@Test 
+	public void addCart() throws InterruptedException {
+		
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		HelperClass.byText(locator.getProperty("NokiaModel"));
+		HelperClass.byText(locator.getProperty("AddToCartText"));
+		WebDriverWait wait=new WebDriverWait(driver, 3000);
+		wait.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+	}
+	
+
+}

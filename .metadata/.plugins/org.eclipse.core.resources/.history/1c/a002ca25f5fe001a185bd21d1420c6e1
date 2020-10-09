@@ -1,0 +1,45 @@
+package com.atmecs.travel_booking;
+
+
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.atmecs.travel_booking.base.BaseClass;
+
+public class SignUp extends BaseClass{
+	
+	@Test 
+	public void signUp() throws InterruptedException {
+		driver.findElement(By.id(locator.getProperty("Signup"))).click();
+		Thread.sleep(3000);
+		driver.switchTo().frame("authiframe");
+		driver.findElement(By.cssSelector(locator.getProperty("FBSignInButton"))).click();
+		Thread.sleep(2000);
+		String parent=driver.getWindowHandle();
+
+		Set<String>s=driver.getWindowHandles();
+		Iterator<String> I1= s.iterator();
+
+		while(I1.hasNext())
+		{
+
+			String child_window=I1.next();
+
+
+			if(!parent.equals(child_window))
+			{
+				driver.switchTo().window(child_window);
+				driver.findElement(By.id(locator.getProperty("FBEmailBox"))).sendKeys(data.getProperty("FBEmail"));
+				driver.findElement(By.id(locator.getProperty("FBPassword"))).sendKeys(data.getProperty("Password"));
+				driver.findElement(By.xpath(locator.getProperty("LoginButton"))).click();
+				Thread.sleep(3000);
+			}
+		}
+
+	}
+	
+}
+
+

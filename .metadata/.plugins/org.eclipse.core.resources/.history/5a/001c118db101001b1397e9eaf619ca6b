@@ -1,0 +1,50 @@
+package com.atmecs.demo_blaze.pages;
+
+
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.atmecs.demo_blaze.constants.Constants;
+import com.atmecs.demo_blaze.helper.*;
+import com.atmecs.demo_blaze.utils.PropertyReader;
+
+
+public class SignUpPage   {
+	public static WebDriver driver;
+	Properties locator;
+	Properties data;
+	
+
+
+   
+	public void signUpDetails() throws IOException {
+		PropertyReader reader = new PropertyReader(Constants.Locator_File);
+		PropertyReader reader1 = new PropertyReader(Constants.Testdata_File);
+		extracted();
+		HelperClass.enterValueInTextBox(driver,locator.getProperty("SignupUsername"),data.getProperty("username"));
+		HelperClass.enterValueInTextBox(driver,locator.getProperty("SignupPassword"),data.getProperty("password"));
+		HelperClass.clickOnButton(driver,locator.getProperty("SignUpButton"));
+		WebDriverWait wait = new WebDriverWait(driver,1000);
+		wait.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+
+	}
+
+
+
+
+	private void extracted() {
+		HelperClass.clickElement(driver,locator.getProperty("SignUp"));
+	}
+
+
+
+
+}
+
+
+
+

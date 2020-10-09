@@ -1,0 +1,37 @@
+package com.atmecs.php_travels_chat;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+public class PhpBaseClass {
+	WebDriver driver;
+	Properties obj,obj1;
+
+	@BeforeTest
+	public void propertyFile() throws IOException {
+		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\locators\\locators.properties");
+		obj=new Properties();
+		obj.load(file);
+		FileInputStream file1 = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\testdata\\testdata.properties");
+		obj1 =  new Properties();
+		obj1.load(file1);
+	}
+	
+	@AfterTest
+	public void tearDown() {
+		driver.quit();
+	}
+	
+	@ AfterTest
+	public void testEnds() {
+		System.out.println("Test Ends");
+	}
+
+}
+
+

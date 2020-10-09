@@ -4,8 +4,12 @@ package com.atmecs.phptravels.base;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
 import com.atmecs.phptravels.constants.Constants;
 
 
@@ -13,15 +17,32 @@ public class BaseClass  {
 
 	public WebDriver driver;
 	
-
+	
 	@BeforeMethod
-	public void setUp() throws InterruptedException {
-		System.out.println("launching chrome browser");
-		System.setProperty("webdriver.chrome.driver",Constants.Driver_Path);
-		driver = new ChromeDriver();
-		driver.get(Constants.Base_Url);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	@Parameters("browser")
+	public void setUp(String browser) throws InterruptedException {
+		
+		if(browser.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver",Constants.Firefox_Driver_Path);
+			driver = new FirefoxDriver();
+			driver.get(Constants.Base_Url);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			String expTitle = "PHPTRAVELS booking script and system for hotels airline flights tours cars online application - PHPTRAVELS";
+			String actTitle = driver.getTitle();
+			Assert.assertEquals(actTitle, expTitle);
+		}
+		else if(browser.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver",Constants.Chrome_Driver_Path);
+			driver = new ChromeDriver();
+			driver.get(Constants.Base_Url);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			String expTitle = "PHPTRAVELS booking script and system for hotels airline flights tours cars online application - PHPTRAVELS";
+			String actTitle = driver.getTitle();
+			Assert.assertEquals(actTitle, expTitle);
+			
+		}
 	}
 	@AfterMethod
 	public void tearDown() {

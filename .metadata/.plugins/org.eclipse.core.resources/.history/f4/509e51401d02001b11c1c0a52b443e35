@@ -1,0 +1,56 @@
+package com.atmecs.demo_blaze.base;
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import com.atmecs.demo_blaze.constants.Constants;
+
+
+
+public class BaseClass {
+
+	public  WebDriver driver;
+	Properties locator;
+	Properties data;
+	FileInputStream locatorFile;
+	FileInputStream dataFile;
+
+
+	@BeforeMethod
+	public void setUp() throws InterruptedException, IOException {
+		locatorFile = new FileInputStream(Constants.Locator_File);
+		locator = new Properties();
+		locator.load(locatorFile);
+
+		dataFile = new FileInputStream(Constants.Testdata_File);
+		data = new Properties();
+		data.load(dataFile);
+		System.out.println("launching chrome browser");
+		System.setProperty("webdriver.chrome.driver",Constants.Driver_Path);
+		driver = new ChromeDriver();
+		driver.get(Constants.Base_Url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+		System.out.println("Test execution ends");
+	}
+
+
+
+}
+
+
+

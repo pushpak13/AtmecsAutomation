@@ -1,0 +1,13 @@
+package com.atmecs.php_travels_chat;
+
+import org.testng.annotations.DataProvider;
+
+public class ExcelReader {
+	
+	@DataProvider
+	
+	public static Object[][] excelReader(){
+		
+	}
+
+}

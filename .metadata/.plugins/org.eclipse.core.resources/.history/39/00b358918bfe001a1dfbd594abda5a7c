@@ -1,0 +1,54 @@
+package com.atmecs.travel_booking.base;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+public class BaseClass {
+	WebDriver driver;
+	Properties obj,obj1;
+
+	@BeforeTest
+	public void propertyFile() throws IOException {
+		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\locators\\locators.properties");
+		obj=new Properties();
+		obj.load(file);
+		FileInputStream file1 = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\testdata\\testdata.properties");
+		obj1 =  new Properties();
+		obj1.load(file1);
+	}
+
+	@BeforeMethod
+	public void setUp() throws InterruptedException {
+		System.out.println("launching chrome browser");
+		String chromeDriverPath = System.getProperty("user.dir");
+		System.out.println(chromeDriverPath);
+		System.setProperty("webdriver.chrome.driver",chromeDriverPath+"\\lib\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.goibibo.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+
+	@ AfterTest
+	public void testEnds() {
+		System.out.println("Test Ends");
+	}
+
+}
+
+
+
+

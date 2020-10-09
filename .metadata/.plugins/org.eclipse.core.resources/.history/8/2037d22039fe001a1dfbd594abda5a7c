@@ -1,0 +1,20 @@
+package com.atmecs.php_travels.utility;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class LocateReader {
+	
+	static Properties property;
+	
+	public static Properties readlocation(String path) throws IOException
+	{
+		property = new Properties();
+		FileInputStream file = new FileInputStream(path);
+		property.load(file);
+		return property;
+		
+	}
+
+}

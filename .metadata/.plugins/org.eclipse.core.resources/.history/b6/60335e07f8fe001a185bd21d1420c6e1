@@ -1,0 +1,21 @@
+package com.atmecs.demo_blaze;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class ValidateCart extends DemoBlazeBaseClass {
+	
+
+	@Test 
+	public void validateCart() {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElement(By.linkText("Cart")).click();
+		driver.close();
+
+	}
+	
+	
+
+
+}

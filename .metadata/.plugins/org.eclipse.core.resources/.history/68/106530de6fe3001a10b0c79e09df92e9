@@ -1,0 +1,53 @@
+package Calculation;
+
+
+       class Addition
+       {
+    	   public void add(int a, int b)
+    	   {
+    	System.out.println("Addition is" + (a+b));	   
+		}
+    	   
+       }
+       class Subtraction extends Addition
+       {
+    	   public void sub(int a, int b)
+    	   {
+    	System.out.println("Subtraction is" + (a-b));	   
+    	   }
+       }
+       class Multiplication extends Subtraction
+       {
+    	   public void mul(int a, int b)
+    	   {
+    	System.out.println("Multiplication is" + (a*b));	   
+    	   }
+       }
+       class Division extends Multiplication
+       {
+    	   public void div(int a, int b)
+    	   {
+    	System.out.println("Division is" + (a/b));	   
+    	   }
+
+		public void CallAllMethods() {
+			add(2,3);
+			sub(5,2);
+			mul(3,4);
+			div(6,3);
+		}
+       }
+       
+		 class calculator {
+
+	  public static void main(String[] args()  {
+		  Division d= new Division();
+		  d.CallAllMethods();
+	  }
+		 }
+		 
+		  
+		
+		
+
+	

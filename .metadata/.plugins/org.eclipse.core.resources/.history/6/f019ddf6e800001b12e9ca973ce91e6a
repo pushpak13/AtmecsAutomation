@@ -1,0 +1,27 @@
+package com.atmecs.demo_blaze;
+
+
+import org.testng.annotations.Test;
+import com.atmecs.demo_blaze.base.BaseClass;
+import com.atmecs.demo_blaze.pages.SignUpPage;
+
+public class SignUpTest extends BaseClass{
+	SignUpPage signUp;
+	
+	
+
+	@Test 
+	public void signUpTest() {
+		
+		signUp = new SignUpPage(driver);
+		signUp.clickSignUpText();
+		signUp.enterUserName();
+		signUp.enterPassword();
+		signUp.clickSignUpButton();
+		
+		
+	}
+	
+
+
+}

@@ -1,0 +1,21 @@
+package com.atmecs.php_travels.helpers;
+
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class HelperClass {
+	WebDriver driver;
+	Properties obj,obj1;
+	
+	public HelperClass(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	
+	public void sendKeys(String id,String value)
+	{
+		
+	}
+
+}

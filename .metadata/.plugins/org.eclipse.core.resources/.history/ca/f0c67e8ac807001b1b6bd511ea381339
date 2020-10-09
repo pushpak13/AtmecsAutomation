@@ -1,0 +1,53 @@
+package com.atmecs.excel.dataprovider;
+
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
+import com.atmecs.phptravels.base.BaseClass;
+import com.atmecs.phptravels.constants.Constants;
+import com.atmecs.phptravels.helper.HelperClass;
+import com.atmecs.phptravels.utils.PropertyReader;
+
+
+public class PhpChatExcelTest extends BaseClass {
+	Properties locator;
+
+	@Test(dataProvider = "ChatData", dataProviderClass = PhpDataReader.class)
+	public void chatData(String Name,String WatsappNo,String Email) throws InterruptedException {
+		Logger log = Logger.getLogger(PhpChatExcelTest.class);
+		locator = PropertyReader.readProperty(Constants.Locator_File);
+		HelperClass elementHelper = new HelperClass(driver);
+		Thread.sleep(2000);
+		driver.switchTo().frame("chat-widget");
+		WebDriverWait wait = new WebDriverWait(driver,50);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator.getProperty("ChatIcon"))));
+		Thread.sleep(5000);
+		log.info("Clicking on chat window...");
+		elementHelper.chatIcon(locator.getProperty("ChatIcon"));
+		Thread.sleep(3000);
+		log.info("Username picked from Excel is...");
+		elementHelper.sendKeys(locator.getProperty("NameID"),Name);
+		Thread.sleep(2000);
+		log.info("Watsapp No picked from Excel is...");
+		elementHelper.watsappSendKey(locator.getProperty("Watsapp"),WatsappNo);
+		Thread.sleep(2000);
+		log.info("Email ID picked from Excel is...");
+		elementHelper.sendKeys(locator.getProperty("EmailBox"),Email);
+		log.info("Selecting value from Dropdown...");
+		elementHelper.dropDown(locator.getProperty("ClientDropDown"),locator.getProperty("DropdownValue"));
+		Thread.sleep(2000);
+		log.info("Clicking on 'Start the chat' button to start chat...");
+		elementHelper.clickStartChatButton(locator.getProperty("StartChat"));
+		Thread.sleep(3000);
+	}
+
+}
+
+
+
+
+
+

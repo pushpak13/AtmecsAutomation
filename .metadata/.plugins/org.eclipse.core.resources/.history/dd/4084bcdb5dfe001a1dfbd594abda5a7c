@@ -1,0 +1,18 @@
+package com.atmecs.php_travels.utility;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class LocateReader {
+	Properties 
+}
+	
+	public void readFile() throws IOException {
+		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\locators\\locators.properties");
+		obj=new Properties();
+		obj.load(file);
+		FileInputStream file1 = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\testdata\\testdata.properties");
+		obj1 =  new Properties();
+		obj1.load(file1);
+	}

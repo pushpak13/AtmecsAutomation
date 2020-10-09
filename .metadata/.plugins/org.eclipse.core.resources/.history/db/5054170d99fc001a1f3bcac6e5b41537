@@ -1,0 +1,10 @@
+package com.atmecs.php_travels_chat;
+
+public class PhpBaseClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

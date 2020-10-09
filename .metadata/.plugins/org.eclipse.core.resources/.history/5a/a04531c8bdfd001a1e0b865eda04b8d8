@@ -1,0 +1,9 @@
+package com.atmecs.php_travels.utility;
+
+import java.util.Properties;
+
+public class PropertyFileReader {
+	
+	Properties property;
+
+}

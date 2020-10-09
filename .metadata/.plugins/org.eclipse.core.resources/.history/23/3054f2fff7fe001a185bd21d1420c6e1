@@ -1,0 +1,27 @@
+package com.atmecs.demo_blaze;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+public class SignUp extends DemoBlazeBaseClass {
+	
+
+	@Test 
+	public void signUp() throws InterruptedException {
+		driver.findElement(By.linkText("Sign up")).click();
+		driver.findElement(By.cssSelector("#sign-username")).sendKeys("pushpak");
+		driver.findElement(By.cssSelector("#sign-password")).sendKeys("demo@1234");
+		driver.findElement(By.xpath("//button[contains(text(),'Sign up')]")).click();
+		WebDriverWait wait = new WebDriverWait(driver,1000);
+		wait.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+		
+	}
+	
+
+
+}

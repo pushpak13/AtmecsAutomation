@@ -1,0 +1,51 @@
+package com.atmecs.php_travels.base;
+
+
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import com.atmecs.php_travels.constants.Constants;
+import com.atmecs.php_travels.utility.PropertyReader;
+
+public class BaseClass  {
+	
+	protected WebDriver driver;
+	protected Properties property;
+
+	@BeforeTest
+	public void propertyFile() throws IOException {
+		property = PropertyReader.readProperties(Constants.Locator_File);
+		property = PropertyReader.readProperties(Constants.Testdata_File);
+		
+	}
+	
+	@BeforeMethod
+	public void setUp() throws InterruptedException {
+		System.out.println("launching chrome browser");
+		String chromeDriverPath = null;
+		System.setProperty("webdriver.chrome.driver",chromeDriverPath+Constants.Driver_Path);
+		System.out.println(chromeDriverPath);
+		driver = new ChromeDriver();
+		driver.get("Base_Url");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+	
+	@ AfterTest
+	public void testEnds() {
+		System.out.println("Test Ends");
+	}
+
+}
+
+

@@ -1,0 +1,71 @@
+package com.atmecs.php_travels.base;
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import com.atmecs.php_travels.constants.Constants;
+import com.atmecs.php_travels.utils.PropertyReader;
+
+public class BaseClass  {
+
+	public static WebDriver driver;
+	public static Properties locator;
+	public static Properties data;
+
+
+
+	@BeforeTest
+	public void fileReader() throws IOException {
+		try {
+			FileInputStream locFile = new FileInputStream(System.getProperty("user.dir")+ Constants.Locator_File);
+			 locator = new Properties();
+			locator.load(locFile);
+		}
+			catch(Exception e) {
+				System.out.println("Exception is" + e.getMessage());
+			}
+		try {
+			FileInputStream dataFile = new FileInputStream(System.getProperty("user.dir")+ Constants.Testdata_File);
+			 data = new Properties();
+			data.load(dataFile);
+		}
+		catch(Exception e) {
+			System.out.println("Exception is" + e.getMessage());
+
+		}
+			
+
+
+		}
+
+		@BeforeMethod
+		public void setUp() throws InterruptedException {
+			System.out.println("launching chrome browser");
+			String DriverPath = System.setProperty(System.getProperty("user.dir"), Constants.Driver_Path);
+			System.out.println(DriverPath);
+			driver = new ChromeDriver();
+			driver.get("Base_Url");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+		@AfterMethod
+		public void tearDown() {
+			driver.quit();
+		}
+
+		@ AfterTest
+		public void testEnds() {
+			System.out.println("Test Ends");
+		}
+
+	}
+
+

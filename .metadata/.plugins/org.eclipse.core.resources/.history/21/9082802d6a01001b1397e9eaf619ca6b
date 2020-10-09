@@ -1,0 +1,38 @@
+package com.atmecs.travel_booking.utils;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.atmecs.travel_booking.constants.Constants;
+
+public class ExcelUtils {
+	
+	public static XSSFSheet ExcelSheet;
+	public static XSSFWorkbook ExcelWorkBook;
+	public static XSSFRow Row;
+	public static XSSFCell Cell;
+	
+	public static void getRowCount() {
+		try {
+			
+			ExcelWorkBook = new XSSFWorkbook(Constants.ExcelData_File);
+			ExcelSheet = ExcelWorkBook.getSheet("Sheet1");
+			int rowCount = ExcelSheet.getLastRowNum();
+			System.out.println("No of rows" +rowCount);
+		} catch(Exception e) {
+			System.out.println("Exception is" +e.getMessage())
+		
+	}
+	
+	
+		
+	}
+	
+	
+	
+
+}

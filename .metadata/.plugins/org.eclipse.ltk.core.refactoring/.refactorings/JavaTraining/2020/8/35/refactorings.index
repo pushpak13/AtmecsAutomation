@@ -1,0 +1,22 @@
+1598190634975	Delete element
+1598254104741	Delete element
+1598254229757	Delete element
+1598254282473	Delete element
+1598254291722	Delete element
+1598331934120	Delete element
+1598349596491	Delete element
+1598359742467	Rename package 'Calculation'
+1598359777319	Rename package 'Operations'
+1598360126225	Rename type 'Additionoverloading'
+1598361062314	Delete element
+1598362710106	Rename type 'Divisionoverloading'
+1598363220662	Rename type 'Subtractionoverloading'
+1598363498685	Rename type 'calculator1'
+1598364002453	Rename type 'Menudrivencalculation'
+1598364240448	Rename compilation unit 'addition.java'
+1598364447903	Rename compilation unit 'Addition.java'
+1598364472439	Rename compilation unit 'subtraction.java'
+1598364559409	Rename compilation unit 'multiplication.java'
+1598364648808	Rename type 'Division'
+1598368456015	Rename type 'AddNnumbers'
+1598595367176	Rename type 'DivisionByZeroException'

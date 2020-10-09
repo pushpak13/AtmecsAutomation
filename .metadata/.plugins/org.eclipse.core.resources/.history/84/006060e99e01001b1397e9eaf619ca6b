@@ -1,0 +1,57 @@
+package com.atmecs.demo_blaze.utils;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.testng.annotations.Test;
+
+import com.atmecs.demo_blaze.constants.Constants;
+
+public class PropertyReader {
+	
+	public static Properties locator;
+	public static Properties data;
+	
+	@Test
+	
+	public static Properties propertyReader(String Path) throws IOException{
+		try {
+			FileInputStream locFile = new FileInputStream(Constants.Locator_File);
+			locator = new Properties();
+			locator.load(locFile);
+		}
+		catch(Exception e) {
+			System.out.println("Exception is" + e.getMessage());
+		}
+		return locator;
+	}
+		
+		public static Properties propertyReader1(String Path) throws IOException {
+	
+		try {
+			FileInputStream dataFile = new FileInputStream(Constants.Testdata_File);
+			data = new Properties();
+			data.load(dataFile);
+		}
+		catch(Exception e) {
+			System.out.println("Exception is" + e.getMessage());
+
+		}
+		return data;
+		}
+}
+		
+
+	
+	
+	
+
+
+	
+		
+	
+
+
+
+

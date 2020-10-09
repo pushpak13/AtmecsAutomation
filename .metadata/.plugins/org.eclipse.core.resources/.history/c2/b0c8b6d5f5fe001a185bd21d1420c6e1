@@ -1,0 +1,37 @@
+package com.atmecs.travel_booking;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.atmecs.travel_booking.base.BaseClass;
+import com.atmecs.travel_booking.helper.HelperClass;
+
+public class Booking extends BaseClass {
+	
+	@Test 
+	public void booking() throws InterruptedException {
+		HelperClass elementHelper = new HelperClass(driver);
+		elementHelper.travelFromSendKey(locator.getProperty("FromID"));
+		elementHelper.travelDestinationSendKey(locator.getProperty("DestID"));
+		elementHelper.locateByID(locator.getProperty("DepartureID"));
+		elementHelper.locateByID(data.getProperty("DepartureDate"));
+		elementHelper.locateByID(locator.getProperty("ReturnID"));
+		elementHelper.locateByID(data.getProperty("ReturnDate"));
+		Thread.sleep(2000);
+		elementHelper.locateByID(locator.getProperty("TravelDetail"));
+		Thread.sleep(2000);
+		for(int i=0;i<3;i++)
+		{
+			elementHelper.locateByID(locator.getProperty("Passengers"));
+		}
+		Thread.sleep(2000);
+		elementHelper.locateByID(locator.getProperty("SearchButton"));
+		Thread.sleep(9000);
+		driver.close();
+	}
+	
+
+
+}
